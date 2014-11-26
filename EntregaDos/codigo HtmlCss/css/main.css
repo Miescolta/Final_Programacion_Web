@@ -29,6 +29,19 @@ font-family: 'mankSans',sans-serif;
 
 }
 
+.dropzone{
+	height: 50%;
+	width:  100%;
+	border: 2px dashed #ccc;
+	color:#ccc;
+	line-height: 100px;
+	text-align: center;
+
+}
+.dropzone.dragover{
+	border-color: #000;
+	color:#000;
+}
 
 .usuario{
 

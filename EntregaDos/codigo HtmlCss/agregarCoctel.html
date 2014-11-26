@@ -67,7 +67,74 @@
         <div class="row" >
 
         <div class="col-xs-5" id="llenarDatosA">
-             <p class="fotoPlus"><a class="btn btn-sm" role="button" id="butA"><span class="glyphicon glyphicon-plus" id="masA"></span> </a></p>
+        <div id="uploads"></div>
+          <div class="dropzone" id="dropzone">drop picture
+            <script >
+
+            (function(){
+              var dropzone = document.getElementById('dropzone');
+
+              var displayUploads=function(data){
+                var uploads=documen.getElementById('uploads'),
+                anchor,
+                x;
+                for (x=0;x<dara.length; x=x+1) {
+                  anchor=document.createElement('a');
+                  anchor.href=data[x].file;
+                  anchor.innerText=data[x].name;
+
+                  uploads.appendChild(anchor);
+                };
+              }
+
+              var upload=function(files){
+                var formData = new FormData(),
+                xhr= new XMLHttpRequest(),
+                x;
+                for (x=0;x<files.length;x=x+1) {
+                  formData.append('file[]',files[x]);
+                };
+
+                xhr.onload=function(){
+                  var data=JSON.parse(this.responseText);
+                  console.log(data);
+                  displayUploads(data);
+                }
+
+                xhr.open('post','upload.php');
+                xhr.send(formData);
+
+              };
+
+
+               dropzone.ondrop=function(e){
+
+                e.preventDefault();
+                this.className='dropzone';
+                upload(e.dataTransfer.files);
+
+              };
+
+              dropzone.ondragover=function(){
+
+                this.className='dropzone dragover';
+                return false;
+
+              };
+
+               dropzone.ondragleave=function(){
+
+                this.className='dropzone';
+                return false;
+
+              };
+
+
+            }()); 
+
+
+            </script>
+          </div>
         </div>   
 
         <div class="col-xs-6">
