@@ -1,4 +1,4 @@
-jQuery(document).ready(function($){
+$(document).ready(function(){
 	$( "#llenarDatos" ).submit(function(event) {
   		console.log("Funciona");
  			var user=$("#correoLogin").val();
@@ -43,18 +43,6 @@ jQuery(document).ready(function($){
                   anchor.innerText=data[x].name;
 
                    var nombre=data[x].name;
-
-                   $.ajax({
-                    type: "POST",
-                    url: "includes/agrefarImg.php",
-                    data: { img: nombre}
-                   }).done(function(result)){
-
-                   })
-                    success(function(result)){
-
-                    }
-
 
                    
 

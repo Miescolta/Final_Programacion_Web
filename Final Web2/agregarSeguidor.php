@@ -11,6 +11,7 @@ $idUsuario= $_SESSION["username"];
 //variables que reciben 
 $idUsuarioSeguido=$_GET["idSigo"];
 
+
 echo $idUsuario;
 echo $idUsuarioSeguido;
 
@@ -22,6 +23,6 @@ $query= "INSERT INTO bartender.seguidores (`idUsuario`,`idUsuarioSeguido`) VALUE
 mysqli_query($cxn,$query);
 
 //cuando acaba vuelve a la pagina de login
-//header('Location: coctel.php?idCoctel='.$idcoc);
+header('Location: perfilSeguidor.php?idSeguidor='.$idUsuarioSeguido);
 
 ?>

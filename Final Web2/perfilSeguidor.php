@@ -86,28 +86,29 @@
  $resultN= mysqli_query($cxn,$query);
 
 
-
+$temp="";
  while($row = mysqli_fetch_array($resultN)) {
 
-    echo "hola";
+    
 
   echo"<div class='col-xs-9' id='seguirB'>";
 
+  $temp=$row['idUsuarioSeguido'];
 
-  if($usuario==$row['idUsuarioSeguido']){
+ 
 
-   echo "<p>SIGUIENDO</p>";
+}
+
+ if($usuario==$temp){
+
+   echo "<p id='butSiguiendo'>SIGUIENDO</p>";
 }
  
- if($row['idUsuarioSeguido']!=$usuario){
+ if($temp!=$usuario){
 
   echo "<a class='btn btn-primary btn-sm' role='button' id='butM' href='agregarSeguidor.php?idSigo=$usuario'><span class='glyphicon glyphicon-plus' id='masB'></span> SEGUIR </a>";
  
   }
-
- 
-
-}
 
 
 ?>
@@ -190,12 +191,12 @@
     echo "<a href='perfilSeguidor.html'>".$row['usuarioNombre']."</a>";
     echo "<span class='glyphicon glyphicon-star-empty' height='15' width='15' id='imgZD'></span>";
 
-
+    
 
     $queryS= "SELECT bartender.puntaje.idCoctel, SUM(bartender.puntaje.puntaje) AS sumatoria FROM bartender.puntaje WHERE bartender.puntaje.idCoctel= '$row[idCoctel]'";
     $resultS= mysqli_query($cxn,$queryS);
      while($row = mysqli_fetch_array($resultS)) {
-
+     
       echo $row['sumatoria'];
 
      }

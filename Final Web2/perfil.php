@@ -155,7 +155,7 @@
     echo" <div class='col-xs-10' id='nomCH'> ";
     echo" <h3 class='nombreCoc'>  <a href='coctel.php?idCoctel=".$row['idCoctel']."'> ".$row['coctelNombre']."</a></h3>";
     echo "</div>";
-    echo "<a href='coctel.php'><img src=".$row['imagen']."  id='imgSi' ></a>";
+    echo "<a href='coctel.php?idCoctel=".$row['idCoctel']."'><img src=".$row['imagen']."  id='imgSi' ></a>";
     echo"<div class='infoUMuro' >";
     echo "<img class='image-responsive'  src='img/usuario2.png' height='15' width='15' id='autorC'>"; 
     echo "<a href='perfilSeguidor.html'>".$row['usuarioNombre']."</a>";
