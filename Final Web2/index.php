@@ -77,7 +77,7 @@
     </div>
 
     <div class="col-xs-4 col-sm-1 col-md-1" id="BID">
-      <p><a class="btn btn-primary btn-sm" role="button" id="butM" href="registro.php">Registrar </a></p>
+      <input class="btn btn-primary btn-sm" role="button" id="butMi" onclick="location.href='registro.php';" value="Registrar">
     </div>
 
 
